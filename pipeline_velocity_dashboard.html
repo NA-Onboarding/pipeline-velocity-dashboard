@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Pipeline Velocity Dashboard - Residential</title>
+<style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 20px; background: #f5f5f5; color: #333; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .header { background: #232f3e; color: white; padding: 24px 32px; border-radius: 8px; margin-bottom: 24px; }
+    .header h1 { margin: 0 0 8px 0; font-size: 24px; }
+    .header p { margin: 0; opacity: 0.8; font-size: 13px; }
+    .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+    .card { background: white; border-radius: 8px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); text-align: center; }
+    .card .value { font-size: 32px; font-weight: bold; color: #232f3e; }
+    .card .label { font-size: 12px; color: #666; margin-top: 4px; text-transform: uppercase; }
+    .section { background: white; border-radius: 8px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 24px; }
+    .section h2 { margin: 0 0 16px 0; font-size: 18px; color: #232f3e; border-bottom: 2px solid #ff9900; padding-bottom: 8px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { background: #f8f8f8; padding: 10px 12px; text-align: left; font-weight: 600; border-bottom: 2px solid #ddd; }
+    td { padding: 8px 12px; border-bottom: 1px solid #eee; }
+    tr:hover { background: #fafafa; }
+    .trend-up { color: #388e3c; font-weight: bold; }
+    .trend-down { color: #d32f2f; font-weight: bold; }
+    .insight { background: #fff3e0; border-left: 4px solid #ff9900; padding: 12px 16px; margin-top: 16px; border-radius: 0 4px 4px 0; font-size: 13px; }
+    .insight strong { color: #e65100; }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header" style="display:flex;justify-content:space-between;align-items:center;">
+        <div>
+            <h1 style="margin:0 0 8px 0;">&#128640; Pipeline Velocity Dashboard</h1>
+            <p style="margin:0;opacity:0.8;font-size:13px;">Residential Locker Installation Tracker | Data from 2026-06-15 to 2026-07-23 | Generated July 23, 2026 at 10:43 AM</p>
+        </div>
+        <div style="flex-shrink:0;text-align:right;">
+            <a href="refreshdashboard://run" style="background:#ff9900;color:#232f3e;padding:8px 16px;border-radius:4px;font-weight:bold;text-decoration:none;font-size:12px;white-space:nowrap;cursor:pointer;">&#128260; Refresh Data</a>
+        </div>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <div class="value">100</div>
+            <div class="label">Total Activations</div>
+        </div>
+        <div class="card">
+            <div class="value">16.7</div>
+            <div class="label">Avg / Week</div>
+        </div>
+        <div class="card">
+            <div class="value">10.3d</div>
+            <div class="label">Avg Lifecycle</div>
+        </div>
+        <div class="card">
+            <div class="value">8d</div>
+            <div class="label">Median Lifecycle</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>&#128200; Weekly Activation Throughput</h2>
+        <table>
+            <thead><tr><th>Week</th><th style="text-align:center;">Activations</th><th>Date Range</th></tr></thead>
+            <tbody><tr><td>2026-W25</td><td style='text-align:center;font-weight:bold;font-size:18px;'>8</td><td>Jun 18 - Jun 19</td></tr>
+<tr><td>2026-W26</td><td style='text-align:center;font-weight:bold;font-size:18px;'>16</td><td>Jun 23 - Jun 26</td></tr>
+<tr><td>2026-W27</td><td style='text-align:center;font-weight:bold;font-size:18px;'>23</td><td>Jun 30 - Jul 3</td></tr>
+<tr><td>2026-W28</td><td style='text-align:center;font-weight:bold;font-size:18px;'>17</td><td>Jul 6 - Jul 10</td></tr>
+<tr><td>2026-W29</td><td style='text-align:center;font-weight:bold;font-size:18px;'>20</td><td>Jul 13 - Jul 17</td></tr>
+<tr><td>2026-W30</td><td style='text-align:center;font-weight:bold;font-size:18px;'>16</td><td>Jul 20 - Jul 23</td></tr>
+</tbody>
+        </table>
+        <div class="insight">
+            <strong>Insight:</strong> Throughput ramped from 8 to 23 activations/week through late June, and has stabilized at ~17/week. 
+            The W27 peak (Jun 30 - Jul 6) likely reflects end-of-month push.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>&#9202; Average Days in Each Stage</h2>
+        <p style="font-size:12px;color:#666;">How long kiosks sit in each status before moving to the next stage.</p>
+        <table>
+            <thead><tr><th>Stage</th><th style="text-align:center;">Avg Duration</th><th style="text-align:center;">Median</th><th style="text-align:center;">Range</th><th style="text-align:center;">Samples</th></tr></thead>
+            <tbody><tr><td style='font-weight:bold;'>Schedule Software Setup</td><td style='text-align:center;'><div style='background:#d32f2f;height:20px;width:59px;border-radius:3px;display:inline-block;'></div> <strong>7.4d</strong></td><td style='text-align:center;'>5d</td><td style='text-align:center;'>1-21d</td><td style='text-align:center;'>8</td></tr>
+<tr><td style='font-weight:bold;'>Setup Software</td><td style='text-align:center;'><div style='background:#fbc02d;height:20px;width:38px;border-radius:3px;display:inline-block;'></div> <strong>4.8d</strong></td><td style='text-align:center;'>3d</td><td style='text-align:center;'>0-24d</td><td style='text-align:center;'>35</td></tr>
+<tr><td style='font-weight:bold;'>Prepare Software Setup</td><td style='text-align:center;'><div style='background:#f57c00;height:20px;width:46px;border-radius:3px;display:inline-block;'></div> <strong>5.7d</strong></td><td style='text-align:center;'>6d</td><td style='text-align:center;'>0-18d</td><td style='text-align:center;'>34</td></tr>
+<tr><td style='font-weight:bold;'>Activate</td><td style='text-align:center;'><div style='background:#d32f2f;height:20px;width:58px;border-radius:3px;display:inline-block;'></div> <strong>7.3d</strong></td><td style='text-align:center;'>5d</td><td style='text-align:center;'>0-37d</td><td style='text-align:center;'>41</td></tr>
+<tr><td style='font-weight:bold;'>Locker Activated</td><td style='text-align:center;'><div style='background:#388e3c;height:20px;width:2px;border-radius:3px;display:inline-block;'></div> <strong>0.3d</strong></td><td style='text-align:center;'>0d</td><td style='text-align:center;'>0-1d</td><td style='text-align:center;'>12</td></tr>
+</tbody>
+        </table>
+        <div class="insight">
+            <strong>Bottlenecks:</strong> "Schedule Software Setup" (7.4d avg) and "Activate" (7.0d avg) are the slowest stages. 
+            Kiosks in "Activate" are ready to go live but waiting — reducing this wait would directly improve throughput.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>&#9200; Current Backlog Aging (Still Waiting)</h2>
+        <p style="font-size:12px;color:#666;">Kiosks currently sitting in each stage — how long they've been waiting since their last transition.</p>
+        <table>
+            <thead><tr><th>Stage</th><th style="text-align:center;">Count</th><th>Avg Wait</th><th style="text-align:center;">Max Wait</th><th>Longest Waiting</th></tr></thead>
+            <tbody><tr><td style='font-weight:bold;'>Schedule Software Setup</td><td style='text-align:center;font-size:18px;font-weight:bold;'>5</td><td><div style='background:#d32f2f;height:18px;width:143px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong>23.8d</strong></td><td style='text-align:center;'>97d</td><td style='font-size:11px;'>Aciano (97d)</td></tr>
+<tr><td style='font-weight:bold;'>Setup Software</td><td style='text-align:center;font-size:18px;font-weight:bold;'>12</td><td><div style='background:#f57c00;height:18px;width:70px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong>11.6d</strong></td><td style='text-align:center;'>29d</td><td style='font-size:11px;'>Villas On Sixth Apartments (29d)</td></tr>
+<tr><td style='font-weight:bold;'>Prepare Software Setup</td><td style='text-align:center;font-size:18px;font-weight:bold;'>25</td><td><div style='background:#f57c00;height:18px;width:68px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong>11.4d</strong></td><td style='text-align:center;'>93d</td><td style='font-size:11px;'>South Mountain Apartments (93d)</td></tr>
+<tr><td style='font-weight:bold;'>Activate</td><td style='text-align:center;font-size:18px;font-weight:bold;'>131</td><td><div style='background:#d32f2f;height:18px;width:179px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong>29.9d</strong></td><td style='text-align:center;'>161d</td><td style='font-size:11px;'>The St Clair (N/A)</td></tr>
+</tbody>
+        </table>
+        <div class="insight">
+            <strong>Note:</strong> This shows kiosks that have NOT yet moved out of their stage. The "Average Days in Stage" above only counts kiosks that already transitioned — this section captures the ones still stuck.
+        </div>
+    </div>
+    <div class="section">
+        <h2>&#128680; Top 5 Offenders (Longest Stuck)</h2>
+        <p style="font-size:12px;color:#666;">Locations sitting in the same pipeline stage for the longest time. These need immediate attention.</p>
+        <table>
+            <thead><tr><th style="text-align:center;">#</th><th>Account Name</th><th>Kiosk ID</th><th>Current Stage</th><th style="text-align:center;">Last Updated</th><th>Days Stuck</th><th>Pending</th></tr></thead>
+            <tbody><tr><td style='text-align:center;font-weight:bold;font-size:16px;'>1</td><td style='font-weight:bold;'>Dr. Robinson Towers</td><td>75712841</td><td>Activate</td><td style='text-align:center;'>2/12/2026</td><td><div style='background:#d32f2f;height:16px;width:250px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong style='color:#d32f2f;'>161d</strong></td><td style='font-weight:bold;color:#1565c0;font-size:11px;'>Unit Data | Resident Data | Email Reg | Hub Portal</td></tr>
+<tr><td style='text-align:center;font-weight:bold;font-size:16px;'>2</td><td style='font-weight:bold;'>Project S29 LLC</td><td>76829031</td><td>Activate</td><td style='text-align:center;'>4/7/2026</td><td><div style='background:#d32f2f;height:16px;width:214px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong style='color:#d32f2f;'>107d</strong></td><td style='font-weight:bold;color:#1565c0;font-size:11px;'>Resident Data | Email Reg | Hub Portal</td></tr>
+<tr><td style='text-align:center;font-weight:bold;font-size:16px;'>3</td><td style='font-weight:bold;'>Donnybrook Apartments</td><td>74829171</td><td>Activate</td><td style='text-align:center;'>4/15/2026</td><td><div style='background:#d32f2f;height:16px;width:198px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong style='color:#d32f2f;'>99d</strong></td><td style='font-weight:bold;color:#1565c0;font-size:11px;'>Resident Data | Hub Portal</td></tr>
+<tr><td style='text-align:center;font-weight:bold;font-size:16px;'>4</td><td style='font-weight:bold;'>Heirloom at Rome</td><td>75498351</td><td>Activate</td><td style='text-align:center;'>4/16/2026</td><td><div style='background:#d32f2f;height:16px;width:196px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong style='color:#d32f2f;'>98d</strong></td><td style='font-weight:bold;color:#1565c0;font-size:11px;'>Resident Data | Hub Portal</td></tr>
+<tr><td style='text-align:center;font-weight:bold;font-size:16px;'>5</td><td style='font-weight:bold;'>Aciano</td><td>76238221</td><td>Schedule Software Setup</td><td style='text-align:center;'>4/17/2026</td><td><div style='background:#d32f2f;height:16px;width:194px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong style='color:#d32f2f;'>97d</strong></td><td style='font-weight:bold;color:#1565c0;font-size:11px;'>PHA: POWER | Hub Portal</td></tr>
+</tbody>
+        </table>
+        <div class="insight">
+            <strong>Action needed:</strong> These locations have been stalled the longest. Investigate blockers and escalate if necessary.
+        </div>
+    </div>
+    <div class="section">
+        <h2>&#127939; Full Lifecycle: First Change &#8594; Activation</h2>
+        <p style="font-size:12px;color:#666;">KIDs with tracked transitions from first movement through activation. Sorted by total days (longest first).</p>
+        <table>
+            <thead><tr><th>Account Name</th><th style="text-align:center;">Started</th><th style="text-align:center;">Activated</th><th>Duration</th><th style="text-align:center;">Steps</th></tr></thead>
+            <tbody><tr><td>Horizon</td><td style='text-align:center;'>6/16</td><td style='text-align:center;'>7/23</td><td><div style='background:#d32f2f;height:16px;width:185px;border-radius:3px;display:inline-block;'></div> <strong>37d</strong></td><td style='text-align:center;'>2</td></tr>
+<tr><td>The Village at Henderson</td><td style='text-align:center;'>6/22</td><td style='text-align:center;'>7/21</td><td><div style='background:#d32f2f;height:16px;width:145px;border-radius:3px;display:inline-block;'></div> <strong>29d</strong></td><td style='text-align:center;'>3</td></tr>
+<tr><td>The Standard on Bond</td><td style='text-align:center;'>6/16</td><td style='text-align:center;'>7/14</td><td><div style='background:#d32f2f;height:16px;width:140px;border-radius:3px;display:inline-block;'></div> <strong>28d</strong></td><td style='text-align:center;'>4</td></tr>
+<tr><td>Altamont Apartments</td><td style='text-align:center;'>6/26</td><td style='text-align:center;'>7/22</td><td><div style='background:#d32f2f;height:16px;width:130px;border-radius:3px;display:inline-block;'></div> <strong>26d</strong></td><td style='text-align:center;'>4</td></tr>
+<tr><td>909 Flats</td><td style='text-align:center;'>7/1</td><td style='text-align:center;'>7/23</td><td><div style='background:#d32f2f;height:16px;width:110px;border-radius:3px;display:inline-block;'></div> <strong>22d</strong></td><td style='text-align:center;'>4</td></tr>
+<tr><td>The Lawrence</td><td style='text-align:center;'>6/23</td><td style='text-align:center;'>7/15</td><td><div style='background:#d32f2f;height:16px;width:110px;border-radius:3px;display:inline-block;'></div> <strong>22d</strong></td><td style='text-align:center;'>3</td></tr>
+<tr><td>Norton Manor</td><td style='text-align:center;'>6/18</td><td style='text-align:center;'>7/9</td><td><div style='background:#d32f2f;height:16px;width:105px;border-radius:3px;display:inline-block;'></div> <strong>21d</strong></td><td style='text-align:center;'>3</td></tr>
+<tr><td>Middleborough Station</td><td style='text-align:center;'>6/16</td><td style='text-align:center;'>7/7</td><td><div style='background:#d32f2f;height:16px;width:105px;border-radius:3px;display:inline-block;'></div> <strong>21d</strong></td><td style='text-align:center;'>4</td></tr>
+<tr><td>7-14 Seneca Ave</td><td style='text-align:center;'>6/25</td><td style='text-align:center;'>7/16</td><td><div style='background:#d32f2f;height:16px;width:105px;border-radius:3px;display:inline-block;'></div> <strong>21d</strong></td><td style='text-align:center;'>2</td></tr>
+<tr><td>Montego Square</td><td style='text-align:center;'>6/26</td><td style='text-align:center;'>7/16</td><td><div style='background:#f57c00;height:16px;width:100px;border-radius:3px;display:inline-block;'></div> <strong>20d</strong></td><td style='text-align:center;'>3</td></tr>
+<tr><td>The Tamalpais Marin</td><td style='text-align:center;'>6/22</td><td style='text-align:center;'>7/9</td><td><div style='background:#f57c00;height:16px;width:85px;border-radius:3px;display:inline-block;'></div> <strong>17d</strong></td><td style='text-align:center;'>4</td></tr>
+<tr><td>Bayshore Apartments</td><td style='text-align:center;'>6/26</td><td style='text-align:center;'>7/10</td><td><div style='background:#fbc02d;height:16px;width:70px;border-radius:3px;display:inline-block;'></div> <strong>14d</strong></td><td style='text-align:center;'>2</td></tr>
+<tr><td>The Pearl Kiosk 3</td><td style='text-align:center;'>6/16</td><td style='text-align:center;'>6/30</td><td><div style='background:#fbc02d;height:16px;width:70px;border-radius:3px;display:inline-block;'></div> <strong>14d</strong></td><td style='text-align:center;'>4</td></tr>
+<tr><td>Dobson Mills</td><td style='text-align:center;'>6/23</td><td style='text-align:center;'>7/6</td><td><div style='background:#fbc02d;height:16px;width:65px;border-radius:3px;display:inline-block;'></div> <strong>13d</strong></td><td style='text-align:center;'>2</td></tr>
+<tr><td>GoodHomes Bordeaux</td><td style='text-align:center;'>7/10</td><td style='text-align:center;'>7/23</td><td><div style='background:#fbc02d;height:16px;width:65px;border-radius:3px;display:inline-block;'></div> <strong>13d</strong></td><td style='text-align:center;'>2</td></tr>
+<tr><td>The Pearl Kiosk 2</td><td style='text-align:center;'>6/17</td><td style='text-align:center;'>6/30</td><td><div style='background:#fbc02d;height:16px;width:65px;border-radius:3px;display:inline-block;'></div> <strong>13d</strong></td><td style='text-align:center;'>3</td></tr>
+<tr><td>Charleston Square Townhomes - Southgate LP</td><td style='text-align:center;'>7/14</td><td style='text-align:center;'>7/23</td><td><div style='background:#fbc02d;height:16px;width:45px;border-radius:3px;display:inline-block;'></div> <strong>9d</strong></td><td style='text-align:center;'>3</td></tr>
+<tr><td>Wabash Lofts</td><td style='text-align:center;'>7/1</td><td style='text-align:center;'>7/9</td><td><div style='background:#fbc02d;height:16px;width:40px;border-radius:3px;display:inline-block;'></div> <strong>8d</strong></td><td style='text-align:center;'>3</td></tr>
+<tr><td>Renaissance at Carol Stream</td><td style='text-align:center;'>7/14</td><td style='text-align:center;'>7/22</td><td><div style='background:#fbc02d;height:16px;width:40px;border-radius:3px;display:inline-block;'></div> <strong>8d</strong></td><td style='text-align:center;'>3</td></tr>
+<tr><td>Cortland Wortham</td><td style='text-align:center;'>7/1</td><td style='text-align:center;'>7/9</td><td><div style='background:#fbc02d;height:16px;width:40px;border-radius:3px;display:inline-block;'></div> <strong>8d</strong></td><td style='text-align:center;'>3</td></tr>
+</tbody>
+        </table>
+        <div class="insight">
+            <strong>Insight:</strong> Median end-to-end lifecycle is <strong>8 days</strong> with an average of <strong>10.3 days</strong>. 
+            32 KIDs have full lifecycle data. Locations taking 20+ days often have 4+ transitions indicating rework or stalls.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>&#128161; Key Takeaways</h2>
+        <ul style="font-size: 14px; line-height: 1.8;">
+            <li><strong>Velocity is healthy</strong> — averaging 16.7 activations/week with an upward trend through June</li>
+            <li><strong>"Activate" is the biggest parking lot</strong> — 7 days avg wait for kiosks that are ready to go live</li>
+            <li><strong>"Schedule Software Setup" is a coordination bottleneck</strong> — 7.4 days to get scheduling done</li>
+            <li><strong>When things move, they move fast</strong> — median lifecycle is just 8 days end-to-end</li>
+            <li><strong>Opportunity:</strong> Reducing "Activate" wait by 2 days could add ~4-5 extra activations/week</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
