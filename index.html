@@ -25,11 +25,24 @@
 </style>
 </head>
 <body>
+<div id="authGate" style="display:flex;position:fixed;top:0;left:0;width:100%;height:100%;background:#232f3e;z-index:9999;align-items:center;justify-content:center;flex-direction:column;">
+<div style="background:#fff;padding:40px;border-radius:12px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,0.3);max-width:360px;width:90%;">
+<h2 style="margin:0 0 8px 0;color:#232f3e;">&#128274; Dashboard Access</h2>
+<p style="color:#666;font-size:0.9rem;margin-bottom:20px;">Enter the team password to continue</p>
+<input type="password" id="authInput" placeholder="Password" style="width:100%;padding:12px;border:2px solid #ddd;border-radius:6px;font-size:1rem;margin-bottom:12px;box-sizing:border-box;" onkeypress="if(event.key==='Enter')checkAuth()">
+<button onclick="checkAuth()" style="width:100%;padding:12px;background:#ff9900;color:#232f3e;border:none;border-radius:6px;font-weight:bold;font-size:1rem;cursor:pointer;">Access Dashboard</button>
+<p id="authError" style="color:#d32f2f;font-size:0.85rem;margin-top:10px;display:none;">Incorrect password</p>
+</div>
+</div>
+<script>
+function checkAuth(){var p=document.getElementById('authInput').value;if(p==='OnboardingNA'){sessionStorage.setItem('dash_auth','1');document.getElementById('authGate').style.display='none';}else{document.getElementById('authError').style.display='block';}}
+if(sessionStorage.getItem('dash_auth')==='1'){document.getElementById('authGate').style.display='none';}
+</script>
 <div class="container">
     <div class="header" style="display:flex;justify-content:space-between;align-items:center;">
         <div>
             <h1 style="margin:0 0 8px 0;">&#128640; Pipeline Velocity Dashboard</h1>
-            <p style="margin:0;opacity:0.8;font-size:13px;">Residential Locker Installation Tracker | Data from 2026-06-15 to 2026-07-24 | Generated July 24, 2026 at 1:43 PM</p>
+            <p style="margin:0;opacity:0.8;font-size:13px;">Residential Locker Installation Tracker | Data from 2026-06-15 to 2026-07-27 | Generated July 28, 2026 at 9:44 AM</p>
         </div>
         <div style="flex-shrink:0;text-align:right;">
             <a href="refreshdashboard://run" style="background:#ff9900;color:#232f3e;padding:8px 16px;border-radius:4px;font-weight:bold;text-decoration:none;font-size:12px;white-space:nowrap;cursor:pointer;">&#128260; Refresh Data</a>
@@ -38,15 +51,15 @@
 
     <div class="cards">
         <div class="card">
-            <div class="value">102</div>
+            <div class="value">104</div>
             <div class="label">Total Activations</div>
         </div>
         <div class="card">
-            <div class="value">17</div>
+            <div class="value">14.9</div>
             <div class="label">Avg / Week</div>
         </div>
         <div class="card">
-            <div class="value">10.4d</div>
+            <div class="value">10.6d</div>
             <div class="label">Avg Lifecycle</div>
         </div>
         <div class="card">
@@ -65,6 +78,7 @@
 <tr><td>2026-W28</td><td style='text-align:center;font-weight:bold;font-size:18px;'>17</td><td>Jul 6 - Jul 10</td></tr>
 <tr><td>2026-W29</td><td style='text-align:center;font-weight:bold;font-size:18px;'>20</td><td>Jul 13 - Jul 17</td></tr>
 <tr><td>2026-W30</td><td style='text-align:center;font-weight:bold;font-size:18px;'>18</td><td>Jul 20 - Jul 24</td></tr>
+<tr><td>2026-W31</td><td style='text-align:center;font-weight:bold;font-size:18px;'>2</td><td>Jul 27 - Jul 27</td></tr>
 </tbody>
         </table>
         <div class="insight">
@@ -80,8 +94,8 @@
             <thead><tr><th>Stage</th><th style="text-align:center;">Avg Duration</th><th style="text-align:center;">Median</th><th style="text-align:center;">Range</th><th style="text-align:center;">Samples</th></tr></thead>
             <tbody><tr><td style='font-weight:bold;'>Schedule Software Setup</td><td style='text-align:center;'><div style='background:#d32f2f;height:20px;width:59px;border-radius:3px;display:inline-block;'></div> <strong>7.4d</strong></td><td style='text-align:center;'>5d</td><td style='text-align:center;'>1-21d</td><td style='text-align:center;'>8</td></tr>
 <tr><td style='font-weight:bold;'>Setup Software</td><td style='text-align:center;'><div style='background:#fbc02d;height:20px;width:38px;border-radius:3px;display:inline-block;'></div> <strong>4.7d</strong></td><td style='text-align:center;'>3d</td><td style='text-align:center;'>0-24d</td><td style='text-align:center;'>38</td></tr>
-<tr><td style='font-weight:bold;'>Prepare Software Setup</td><td style='text-align:center;'><div style='background:#f57c00;height:20px;width:46px;border-radius:3px;display:inline-block;'></div> <strong>5.8d</strong></td><td style='text-align:center;'>6d</td><td style='text-align:center;'>0-18d</td><td style='text-align:center;'>40</td></tr>
-<tr><td style='font-weight:bold;'>Activate</td><td style='text-align:center;'><div style='background:#d32f2f;height:20px;width:59px;border-radius:3px;display:inline-block;'></div> <strong>7.4d</strong></td><td style='text-align:center;'>6d</td><td style='text-align:center;'>0-37d</td><td style='text-align:center;'>42</td></tr>
+<tr><td style='font-weight:bold;'>Prepare Software Setup</td><td style='text-align:center;'><div style='background:#f57c00;height:20px;width:51px;border-radius:3px;display:inline-block;'></div> <strong>6.4d</strong></td><td style='text-align:center;'>6d</td><td style='text-align:center;'>0-31d</td><td style='text-align:center;'>45</td></tr>
+<tr><td style='font-weight:bold;'>Activate</td><td style='text-align:center;'><div style='background:#d32f2f;height:20px;width:60px;border-radius:3px;display:inline-block;'></div> <strong>7.5d</strong></td><td style='text-align:center;'>6d</td><td style='text-align:center;'>0-37d</td><td style='text-align:center;'>44</td></tr>
 <tr><td style='font-weight:bold;'>Locker Activated</td><td style='text-align:center;'><div style='background:#388e3c;height:20px;width:2px;border-radius:3px;display:inline-block;'></div> <strong>0.3d</strong></td><td style='text-align:center;'>0d</td><td style='text-align:center;'>0-1d</td><td style='text-align:center;'>12</td></tr>
 </tbody>
         </table>
@@ -96,10 +110,10 @@
         <p style="font-size:12px;color:#666;">Kiosks currently sitting in each stage — how long they've been waiting since their last transition.</p>
         <table>
             <thead><tr><th>Stage</th><th style="text-align:center;">Count</th><th>Avg Wait</th><th style="text-align:center;">Max Wait</th><th>Longest Waiting</th></tr></thead>
-            <tbody><tr><td style='font-weight:bold;'>Schedule Software Setup</td><td style='text-align:center;font-size:18px;font-weight:bold;'>5</td><td><div style='background:#d32f2f;height:18px;width:149px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong>24.8d</strong></td><td style='text-align:center;'>98d</td><td style='font-size:11px;'>Aciano (98d)</td></tr>
-<tr><td style='font-weight:bold;'>Setup Software</td><td style='text-align:center;font-size:18px;font-weight:bold;'>9</td><td><div style='background:#f57c00;height:18px;width:79px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong>13.1d</strong></td><td style='text-align:center;'>30d</td><td style='font-size:11px;'>Villas On Sixth Apartments (30d)</td></tr>
-<tr><td style='font-weight:bold;'>Prepare Software Setup</td><td style='text-align:center;font-size:18px;font-weight:bold;'>21</td><td><div style='background:#f57c00;height:18px;width:78px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong>13d</strong></td><td style='text-align:center;'>94d</td><td style='font-size:11px;'>South Mountain Apartments (94d)</td></tr>
-<tr><td style='font-weight:bold;'>Activate</td><td style='text-align:center;font-size:18px;font-weight:bold;'>143</td><td><div style='background:#d32f2f;height:18px;width:157px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong>26.2d</strong></td><td style='text-align:center;'>162d</td><td style='font-size:11px;'>The St Clair (N/A)</td></tr>
+            <tbody><tr><td style='font-weight:bold;'>Schedule Software Setup</td><td style='text-align:center;font-size:18px;font-weight:bold;'>5</td><td><div style='background:#d32f2f;height:18px;width:173px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong>28.8d</strong></td><td style='text-align:center;'>102d</td><td style='font-size:11px;'>Aciano (102d)</td></tr>
+<tr><td style='font-weight:bold;'>Setup Software</td><td style='text-align:center;font-size:18px;font-weight:bold;'>14</td><td><div style='background:#f57c00;height:18px;width:91px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong>15.2d</strong></td><td style='text-align:center;'>34d</td><td style='font-size:11px;'>Villas On Sixth Apartments (34d)</td></tr>
+<tr><td style='font-weight:bold;'>Prepare Software Setup</td><td style='text-align:center;font-size:18px;font-weight:bold;'>20</td><td><div style='background:#f57c00;height:18px;width:86px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong>14.4d</strong></td><td style='text-align:center;'>98d</td><td style='font-size:11px;'>South Mountain Apartments (98d)</td></tr>
+<tr><td style='font-weight:bold;'>Activate</td><td style='text-align:center;font-size:18px;font-weight:bold;'>141</td><td><div style='background:#d32f2f;height:18px;width:166px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong>27.7d</strong></td><td style='text-align:center;'>166d</td><td style='font-size:11px;'>The St Clair (N/A)</td></tr>
 </tbody>
         </table>
         <div class="insight">
@@ -111,11 +125,11 @@
         <p style="font-size:12px;color:#666;">Locations sitting in the same pipeline stage for the longest time. These need immediate attention.</p>
         <table>
             <thead><tr><th style="text-align:center;">#</th><th>Account Name</th><th>Kiosk ID</th><th>Current Stage</th><th style="text-align:center;">Last Updated</th><th>Days Stuck</th><th>Pending</th></tr></thead>
-            <tbody><tr><td style='text-align:center;font-weight:bold;font-size:16px;'>1</td><td style='font-weight:bold;'>Dr. Robinson Towers</td><td>75712841</td><td>Activate</td><td style='text-align:center;'>2/12/2026</td><td><div style='background:#d32f2f;height:16px;width:250px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong style='color:#d32f2f;'>162d</strong></td><td style='font-weight:bold;color:#1565c0;font-size:11px;'>Unit Data | Resident Data | Email Reg | Hub Portal</td></tr>
-<tr><td style='text-align:center;font-weight:bold;font-size:16px;'>2</td><td style='font-weight:bold;'>Project S29 LLC</td><td>76829031</td><td>Activate</td><td style='text-align:center;'>4/7/2026</td><td><div style='background:#d32f2f;height:16px;width:216px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong style='color:#d32f2f;'>108d</strong></td><td style='font-weight:bold;color:#1565c0;font-size:11px;'>Resident Data | Email Reg | Hub Portal</td></tr>
-<tr><td style='text-align:center;font-weight:bold;font-size:16px;'>3</td><td style='font-weight:bold;'>Donnybrook Apartments</td><td>74829171</td><td>Activate</td><td style='text-align:center;'>4/15/2026</td><td><div style='background:#d32f2f;height:16px;width:200px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong style='color:#d32f2f;'>100d</strong></td><td style='font-weight:bold;color:#1565c0;font-size:11px;'>Resident Data | Hub Portal</td></tr>
-<tr><td style='text-align:center;font-weight:bold;font-size:16px;'>4</td><td style='font-weight:bold;'>Heirloom at Rome</td><td>75498351</td><td>Activate</td><td style='text-align:center;'>4/16/2026</td><td><div style='background:#d32f2f;height:16px;width:198px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong style='color:#d32f2f;'>99d</strong></td><td style='font-weight:bold;color:#1565c0;font-size:11px;'>Resident Data | Hub Portal</td></tr>
-<tr><td style='text-align:center;font-weight:bold;font-size:16px;'>5</td><td style='font-weight:bold;'>Aciano</td><td>76238221</td><td>Schedule Software Setup</td><td style='text-align:center;'>4/17/2026</td><td><div style='background:#d32f2f;height:16px;width:196px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong style='color:#d32f2f;'>98d</strong></td><td style='font-weight:bold;color:#1565c0;font-size:11px;'>PHA: POWER | Hub Portal</td></tr>
+            <tbody><tr><td style='text-align:center;font-weight:bold;font-size:16px;'>1</td><td style='font-weight:bold;'>Dr. Robinson Towers</td><td>75712841</td><td>Activate</td><td style='text-align:center;'>2/12/2026</td><td><div style='background:#d32f2f;height:16px;width:250px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong style='color:#d32f2f;'>166d</strong></td><td style='font-weight:bold;color:#1565c0;font-size:11px;'>Unit Data | Resident Data | Email Reg | Hub Portal</td></tr>
+<tr><td style='text-align:center;font-weight:bold;font-size:16px;'>2</td><td style='font-weight:bold;'>Project S29 LLC</td><td>76829031</td><td>Activate</td><td style='text-align:center;'>4/7/2026</td><td><div style='background:#d32f2f;height:16px;width:224px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong style='color:#d32f2f;'>112d</strong></td><td style='font-weight:bold;color:#1565c0;font-size:11px;'>Resident Data | Email Reg | Hub Portal</td></tr>
+<tr><td style='text-align:center;font-weight:bold;font-size:16px;'>3</td><td style='font-weight:bold;'>Donnybrook Apartments</td><td>74829171</td><td>Activate</td><td style='text-align:center;'>4/15/2026</td><td><div style='background:#d32f2f;height:16px;width:208px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong style='color:#d32f2f;'>104d</strong></td><td style='font-weight:bold;color:#1565c0;font-size:11px;'>Resident Data | Hub Portal</td></tr>
+<tr><td style='text-align:center;font-weight:bold;font-size:16px;'>4</td><td style='font-weight:bold;'>Heirloom at Rome</td><td>75498351</td><td>Activate</td><td style='text-align:center;'>4/16/2026</td><td><div style='background:#d32f2f;height:16px;width:206px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong style='color:#d32f2f;'>103d</strong></td><td style='font-weight:bold;color:#1565c0;font-size:11px;'>Resident Data | Hub Portal</td></tr>
+<tr><td style='text-align:center;font-weight:bold;font-size:16px;'>5</td><td style='font-weight:bold;'>Aciano</td><td>76238221</td><td>Schedule Software Setup</td><td style='text-align:center;'>4/17/2026</td><td><div style='background:#d32f2f;height:16px;width:204px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong style='color:#d32f2f;'>102d</strong></td><td style='font-weight:bold;color:#1565c0;font-size:11px;'>PHA: POWER | Hub Portal</td></tr>
 </tbody>
         </table>
         <div class="insight">
@@ -137,20 +151,20 @@
 <tr><td>Middleborough Station</td><td style='text-align:center;'>6/16</td><td style='text-align:center;'>7/7</td><td><div style='background:#d32f2f;height:16px;width:105px;border-radius:3px;display:inline-block;'></div> <strong>21d</strong></td><td style='text-align:center;'>4</td></tr>
 <tr><td>7-14 Seneca Ave</td><td style='text-align:center;'>6/25</td><td style='text-align:center;'>7/16</td><td><div style='background:#d32f2f;height:16px;width:105px;border-radius:3px;display:inline-block;'></div> <strong>21d</strong></td><td style='text-align:center;'>2</td></tr>
 <tr><td>Montego Square</td><td style='text-align:center;'>6/26</td><td style='text-align:center;'>7/16</td><td><div style='background:#f57c00;height:16px;width:100px;border-radius:3px;display:inline-block;'></div> <strong>20d</strong></td><td style='text-align:center;'>3</td></tr>
+<tr><td>Mosaic Apartments</td><td style='text-align:center;'>7/10</td><td style='text-align:center;'>7/27</td><td><div style='background:#f57c00;height:16px;width:85px;border-radius:3px;display:inline-block;'></div> <strong>17d</strong></td><td style='text-align:center;'>2</td></tr>
 <tr><td>The Tamalpais Marin</td><td style='text-align:center;'>6/22</td><td style='text-align:center;'>7/9</td><td><div style='background:#f57c00;height:16px;width:85px;border-radius:3px;display:inline-block;'></div> <strong>17d</strong></td><td style='text-align:center;'>4</td></tr>
-<tr><td>Bayshore Apartments</td><td style='text-align:center;'>6/26</td><td style='text-align:center;'>7/10</td><td><div style='background:#fbc02d;height:16px;width:70px;border-radius:3px;display:inline-block;'></div> <strong>14d</strong></td><td style='text-align:center;'>2</td></tr>
 <tr><td>The Pearl Kiosk 3</td><td style='text-align:center;'>6/16</td><td style='text-align:center;'>6/30</td><td><div style='background:#fbc02d;height:16px;width:70px;border-radius:3px;display:inline-block;'></div> <strong>14d</strong></td><td style='text-align:center;'>4</td></tr>
+<tr><td>Bayshore Apartments</td><td style='text-align:center;'>6/26</td><td style='text-align:center;'>7/10</td><td><div style='background:#fbc02d;height:16px;width:70px;border-radius:3px;display:inline-block;'></div> <strong>14d</strong></td><td style='text-align:center;'>2</td></tr>
 <tr><td>6639 Chester Ave</td><td style='text-align:center;'>7/10</td><td style='text-align:center;'>7/24</td><td><div style='background:#fbc02d;height:16px;width:70px;border-radius:3px;display:inline-block;'></div> <strong>14d</strong></td><td style='text-align:center;'>3</td></tr>
-<tr><td>Dobson Mills</td><td style='text-align:center;'>6/23</td><td style='text-align:center;'>7/6</td><td><div style='background:#fbc02d;height:16px;width:65px;border-radius:3px;display:inline-block;'></div> <strong>13d</strong></td><td style='text-align:center;'>2</td></tr>
 <tr><td>GoodHomes Bordeaux</td><td style='text-align:center;'>7/10</td><td style='text-align:center;'>7/23</td><td><div style='background:#fbc02d;height:16px;width:65px;border-radius:3px;display:inline-block;'></div> <strong>13d</strong></td><td style='text-align:center;'>2</td></tr>
+<tr><td>Dobson Mills</td><td style='text-align:center;'>6/23</td><td style='text-align:center;'>7/6</td><td><div style='background:#fbc02d;height:16px;width:65px;border-radius:3px;display:inline-block;'></div> <strong>13d</strong></td><td style='text-align:center;'>2</td></tr>
 <tr><td>The Pearl Kiosk 2</td><td style='text-align:center;'>6/17</td><td style='text-align:center;'>6/30</td><td><div style='background:#fbc02d;height:16px;width:65px;border-radius:3px;display:inline-block;'></div> <strong>13d</strong></td><td style='text-align:center;'>3</td></tr>
+<tr><td>Carnegie Building</td><td style='text-align:center;'>7/15</td><td style='text-align:center;'>7/27</td><td><div style='background:#fbc02d;height:16px;width:60px;border-radius:3px;display:inline-block;'></div> <strong>12d</strong></td><td style='text-align:center;'>3</td></tr>
 <tr><td>Telegraph Bays</td><td style='text-align:center;'>7/14</td><td style='text-align:center;'>7/24</td><td><div style='background:#fbc02d;height:16px;width:50px;border-radius:3px;display:inline-block;'></div> <strong>10d</strong></td><td style='text-align:center;'>3</td></tr>
-<tr><td>Charleston Square Townhomes - Southgate LP</td><td style='text-align:center;'>7/14</td><td style='text-align:center;'>7/23</td><td><div style='background:#fbc02d;height:16px;width:45px;border-radius:3px;display:inline-block;'></div> <strong>9d</strong></td><td style='text-align:center;'>3</td></tr>
-<tr><td>Renaissance at Carol Stream</td><td style='text-align:center;'>7/14</td><td style='text-align:center;'>7/22</td><td><div style='background:#fbc02d;height:16px;width:40px;border-radius:3px;display:inline-block;'></div> <strong>8d</strong></td><td style='text-align:center;'>3</td></tr>
 </tbody>
         </table>
         <div class="insight">
-            <strong>Insight:</strong> Median end-to-end lifecycle is <strong>8 days</strong> with an average of <strong>10.4 days</strong>. 
+            <strong>Insight:</strong> Median end-to-end lifecycle is <strong>8 days</strong> with an average of <strong>10.6 days</strong>. 
             32 KIDs have full lifecycle data. Locations taking 20+ days often have 4+ transitions indicating rework or stalls.
         </div>
     </div>
@@ -158,7 +172,7 @@
     <div class="section">
         <h2>&#128161; Key Takeaways</h2>
         <ul style="font-size: 14px; line-height: 1.8;">
-            <li><strong>Velocity is healthy</strong> — averaging 17 activations/week with an upward trend through June</li>
+            <li><strong>Velocity is healthy</strong> — averaging 14.9 activations/week with an upward trend through June</li>
             <li><strong>"Activate" is the biggest parking lot</strong> — 7 days avg wait for kiosks that are ready to go live</li>
             <li><strong>"Schedule Software Setup" is a coordination bottleneck</strong> — 7.4 days to get scheduling done</li>
             <li><strong>When things move, they move fast</strong> — median lifecycle is just 8 days end-to-end</li>
