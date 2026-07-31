@@ -29,12 +29,19 @@
     <div class="header" style="display:flex;justify-content:space-between;align-items:center;">
         <div>
             <h1 style="margin:0 0 8px 0;">&#128640; Pipeline Velocity Dashboard</h1>
-            <p style="margin:0;opacity:0.8;font-size:13px;">Residential Locker Installation Tracker | Data from 2026-06-15 to 2026-07-31 | Generated July 31, 2026 at 12:03 PM</p>
+            <p style="margin:0;opacity:0.8;font-size:13px;">Installation Tracker | Data from 2026-06-15 to 2026-07-31 | Generated July 31, 2026 at 12:13 PM</p>
         </div>
         <div style="flex-shrink:0;text-align:right;">
             <a href="refreshdashboard://run" style="background:#ff9900;color:#232f3e;padding:8px 16px;border-radius:4px;font-weight:bold;text-decoration:none;font-size:12px;white-space:nowrap;cursor:pointer;">&#128260; Refresh Data</a>
         </div>
     </div>
+
+    <div class="tabs" style="margin-bottom:20px;">
+        <button class="tab-btn active" onclick="switchTab('residential')" id="tab-residential" style="background:#232f3e;color:white;border:none;padding:12px 24px;font-size:14px;font-weight:bold;cursor:pointer;border-radius:4px 4px 0 0;margin-right:4px;">Residential</button>
+        <button class="tab-btn" onclick="switchTab('commercial')" id="tab-commercial" style="background:#ddd;color:#333;border:none;padding:12px 24px;font-size:14px;font-weight:bold;cursor:pointer;border-radius:4px 4px 0 0;">Commercial</button>
+    </div>
+
+    <div id="residential-tab">
 
     <div class="cards">
         <div class="card">
@@ -166,6 +173,51 @@
             <li><strong>Opportunity:</strong> Reducing "Activate" wait by 2 days could add ~4-5 extra activations/week</li>
         </ul>
     </div>
+    </div><!-- end residential-tab -->
+
+    <div id="commercial-tab" style="display:none;">
+        <div class="cards">
+            <div class="card"><div class="value">46</div><div class="label">Total Activations</div></div>
+            <div class="card"><div class="value">11.5</div><div class="label">Avg / Week</div></div>
+            <div class="card"><div class="value">6</div><div class="label">This Week</div></div>
+            <div class="card"><div class="value">1841</div><div class="label">Total Kiosks</div></div>
+        </div>
+
+        <div class="section">
+            <h2>&#128200; Weekly Activation Throughput (Commercial)</h2>
+            <table><thead><tr><th>Week</th><th>Activations</th><th>Date Range</th></tr></thead>
+            <tbody><tr><td>2026-W28</td><td style='text-align:center;'><div style='background:#ff9900;height:18px;width:75px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong>5</strong></td><td>Jul 8 - Jul 10</td></tr>
+<tr><td>2026-W29</td><td style='text-align:center;'><div style='background:#ff9900;height:18px;width:300px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong>21</strong></td><td>Jul 14 - Jul 16</td></tr>
+<tr><td>2026-W30</td><td style='text-align:center;'><div style='background:#ff9900;height:18px;width:210px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong>14</strong></td><td>Jul 20 - Jul 24</td></tr>
+<tr><td>2026-W31</td><td style='text-align:center;'><div style='background:#ff9900;height:18px;width:90px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong>6</strong></td><td>Jul 27 - Jul 29</td></tr>
+</tbody></table>
+        </div>
+
+        <div class="section">
+            <h2>&#127961; Activations by Vertical</h2>
+            <table><thead><tr><th>Vertical</th><th>Activations</th></tr></thead>
+            <tbody><tr><td style='font-weight:bold;'>Convenience Store / Corner Shop / Newsstands</td><td><div style='background:#1565c0;height:18px;width:216px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong>27</strong></td></tr>
+<tr><td style='font-weight:bold;'>University / College Campus / Student Housing</td><td><div style='background:#ff9900;height:18px;width:88px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong>11</strong></td></tr>
+<tr><td style='font-weight:bold;'>Grocery Store / Supermarket</td><td><div style='background:#388e3c;height:18px;width:24px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong>3</strong></td></tr>
+<tr><td style='font-weight:bold;'>Hospitality / Hotel</td><td><div style='background:#d32f2f;height:18px;width:8px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong>1</strong></td></tr>
+<tr><td style='font-weight:bold;'>Gas Station / Petrol Station</td><td><div style='background:#7b1fa2;height:18px;width:8px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong>1</strong></td></tr>
+<tr><td style='font-weight:bold;'>Residential</td><td><div style='background:#00838f;height:18px;width:8px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong>1</strong></td></tr>
+<tr><td style='font-weight:bold;'>Retail Park / Mall / Shopping Center</td><td><div style='background:#ef6c00;height:18px;width:8px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong>1</strong></td></tr>
+<tr><td style='font-weight:bold;'>General Retail</td><td><div style='background:#4527a0;height:18px;width:8px;border-radius:3px;display:inline-block;vertical-align:middle;'></div> <strong>1</strong></td></tr>
+</tbody></table>
+        </div>
+    </div><!-- end commercial-tab -->
 </div>
+
+<script>
+function switchTab(tab) {
+    document.getElementById('residential-tab').style.display = tab === 'residential' ? 'block' : 'none';
+    document.getElementById('commercial-tab').style.display = tab === 'commercial' ? 'block' : 'none';
+    document.getElementById('tab-residential').style.background = tab === 'residential' ? '#232f3e' : '#ddd';
+    document.getElementById('tab-residential').style.color = tab === 'residential' ? 'white' : '#333';
+    document.getElementById('tab-commercial').style.background = tab === 'commercial' ? '#232f3e' : '#ddd';
+    document.getElementById('tab-commercial').style.color = tab === 'commercial' ? 'white' : '#333';
+}
+</script>
 </body>
 </html>
